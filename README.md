@@ -1,5 +1,7 @@
 # TrustFed — Trustworthy Federated Large Language Models
 
+**🇬🇧 English** · [🇻🇳 Tiếng Việt](README.vi.md)
+
 A portfolio + research proposal for a Research Assistant position on **federated,
 privacy-preserving fine-tuning of language models**. It is built in two stages
 that go from "I understand federated learning" to "I can already run a federated
