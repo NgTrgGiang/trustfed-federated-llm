@@ -5,7 +5,7 @@
 > File này giúp bạn **hiểu tường tận** mọi thứ trong dự án: từ ý tưởng nghiên cứu,
 > các khái niệm cốt lõi (Federated Learning, LoRA, Differential Privacy…), cho tới
 > từng dòng logic trong code và cách đọc kết quả. Đây là một **dự án cá nhân để học
-> và làm rõ vấn đề** cho chính mình — không nhằm mục đích nộp hay xin gì cả.
+> và làm rõ vấn đề** cho chính mình.
 >
 > (File `README.md` là bản tiếng Anh, ngắn gọn giới thiệu dự án. File này là bản
 > tiếng Việt **giải thích sâu để bạn học**.)
