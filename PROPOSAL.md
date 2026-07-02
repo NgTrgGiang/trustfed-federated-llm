@@ -4,6 +4,8 @@
 
 *Prepared by: [Your Name], VinUniversity — [date]*
 
+**🇬🇧 English** · [🇻🇳 Tiếng Việt](PROPOSAL.vi.md)
+
 ---
 
 ## 1. Problem and motivation

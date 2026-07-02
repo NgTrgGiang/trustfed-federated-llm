@@ -1,5 +1,7 @@
 # Pitch email to the professor (template)
 
+**🇬🇧 English** · [🇻🇳 Tiếng Việt](EMAIL_TO_PROF.vi.md)
+
 > Short, concrete, and evidence-first. Swap the bracketed parts, keep it under
 > ~200 words. The goal of the email is to earn a 20-minute meeting, not to close
 > the deal — so lead with what you already *did*, and attach the repo.

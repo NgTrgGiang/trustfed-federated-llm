@@ -1,5 +1,7 @@
 # TrustFed — Hướng dẫn toàn diện (tiếng Việt)
 
+[🇬🇧 English overview](README.md) · **🇻🇳 Tiếng Việt (bản chi tiết)**
+
 > File này giúp bạn **hiểu tường tận** mọi thứ trong dự án: từ ý tưởng nghiên cứu,
 > các khái niệm cốt lõi (Federated Learning, LoRA, Differential Privacy…), cho tới
 > từng dòng logic trong code và cách đọc kết quả. Đọc xong file này bạn có thể tự
