@@ -1,0 +1,11 @@
+# Stage 0 — FedAvg on MNIST (centralized.py, federated.py)
+torch
+torchvision
+flwr[simulation]
+
+# Stage 1 — Federated LoRA on a pre-trained LLM (fed_lora.py)
+transformers
+datasets
+
+# Optional: saves results.png (the script still runs and writes RESULTS.md without it)
+matplotlib
