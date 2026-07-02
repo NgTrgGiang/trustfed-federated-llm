@@ -2,16 +2,19 @@
 
 **🇬🇧 English** · [🇻🇳 Tiếng Việt](README.vi.md)
 
-A portfolio + research proposal for a Research Assistant position on **federated,
-privacy-preserving fine-tuning of language models**. It is built in two stages
-that go from "I understand federated learning" to "I can already run a federated
-LLM adaptation pipeline that touches every pillar of the proposed research".
+A personal learning project to understand — hands-on — what it takes to make
+**federated, privacy-preserving fine-tuning of language models** trustworthy. It
+is built in two stages, from "understand plain federated learning" to "run a
+working federated LLM adaptation pipeline", so each idea in the problem (privacy,
+learning without labels, global↔local knowledge transfer) becomes concrete rather
+than abstract.
 
-- **The research vision:** [`PROPOSAL.md`](PROPOSAL.md) — a 2-page proposal for
+- **The problem, written out:** [`PROPOSAL.md`](PROPOSAL.md) — a short write-up of
   *TrustFed*: F-LLMs that are private by design, learn from unlabelled data, and
   transfer knowledge efficiently between large global and small local models.
-- **The pitch:** [`EMAIL_TO_PROF.md`](EMAIL_TO_PROF.md) — a short cold-email template.
-- **The evidence:** the two code stages below, and [`RESULTS.md`](RESULTS.md).
+- **The deep-dive (Vietnamese):** [`HUONG_DAN.md`](HUONG_DAN.md) — every concept and
+  code section explained from scratch.
+- **The experiments:** the two code stages below, and [`RESULTS.md`](RESULTS.md).
 
 ---
 
@@ -75,7 +78,6 @@ installed). See the proposal for how these map to the research questions.
 | [`fed_lora.py`](fed_lora.py) | **Flagship**: federated LoRA on a pre-trained LLM |
 | [`federated.py`](federated.py) / [`centralized.py`](centralized.py) | Stage 0: FedAvg vs centralized on MNIST |
 | [`RESULTS.md`](RESULTS.md) | Auto-generated results from `fed_lora.py` |
-| [`EMAIL_TO_PROF.md`](EMAIL_TO_PROF.md) | Cold-email template for the RA ask |
 | [`requirements.txt`](requirements.txt) | Dependencies (Stage 0 + Stage 1) |
 
 ## Roadmap (from the proposal)

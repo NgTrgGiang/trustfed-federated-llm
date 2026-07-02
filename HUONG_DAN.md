@@ -4,11 +4,11 @@
 
 > File này giúp bạn **hiểu tường tận** mọi thứ trong dự án: từ ý tưởng nghiên cứu,
 > các khái niệm cốt lõi (Federated Learning, LoRA, Differential Privacy…), cho tới
-> từng dòng logic trong code và cách đọc kết quả. Đọc xong file này bạn có thể tự
-> tin trình bày dự án với giáo sư và trả lời câu hỏi phản biện.
+> từng dòng logic trong code và cách đọc kết quả. Đây là một **dự án cá nhân để học
+> và làm rõ vấn đề** cho chính mình — không nhằm mục đích nộp hay xin gì cả.
 >
-> (File `README.md` là bản tiếng Anh, ngắn gọn, để **gửi cho giáo sư**. File này là
-> để **cho bạn học**.)
+> (File `README.md` là bản tiếng Anh, ngắn gọn giới thiệu dự án. File này là bản
+> tiếng Việt **giải thích sâu để bạn học**.)
 
 ---
 
@@ -21,9 +21,9 @@
 5. [Stage 0 — FedAvg trên MNIST](#5-stage-0--fedavg-trên-mnist)
 6. [Stage 1 — Federated LoRA trên LLM (demo đinh)](#6-stage-1--federated-lora-trên-llm-demo-đinh)
 7. [Đọc hiểu kết quả](#7-đọc-hiểu-kết-quả)
-8. [Hai lỗi tinh vi đã sửa (rất đáng kể khi phỏng vấn)](#8-hai-lỗi-tinh-vi-đã-sửa)
+8. [Hai lỗi tinh vi đã sửa](#8-hai-lỗi-tinh-vi-đã-sửa)
 9. [Cách chạy & các tham số](#9-cách-chạy--các-tham-số)
-10. [Giáo sư có thể hỏi gì — và cách trả lời](#10-giáo-sư-có-thể-hỏi-gì--và-cách-trả-lời)
+10. [Câu hỏi thường gặp về dự án](#10-câu-hỏi-thường-gặp-về-dự-án)
 11. [Hạn chế trung thực & hướng mở rộng](#11-hạn-chế-trung-thực--hướng-mở-rộng)
 12. [Bảng thuật ngữ](#12-bảng-thuật-ngữ)
 
@@ -31,18 +31,17 @@
 
 ## 1. Dự án này là gì và để làm gì
 
-**Mục tiêu thực dụng:** tạo một bộ hồ sơ đủ mạnh để **thuyết phục giáo sư nhận bạn
-làm Trợ lý Nghiên cứu (RA)** cho đề tài *TrustFed: Trustworthy Federated Large
-Language Models* (Mô hình Ngôn ngữ Lớn Liên kết, Đáng tin cậy).
+**Mục tiêu:** hiểu thật rõ — bằng cách tự tay làm — điều gì khiến việc tinh chỉnh
+LLM theo kiểu liên kết trở nên *đáng tin cậy*. Đề tài tên *TrustFed: Trustworthy
+Federated Large Language Models* (Mô hình Ngôn ngữ Lớn Liên kết, Đáng tin cậy).
 
-Hồ sơ gồm 2 phần bổ trợ nhau:
+Dự án gồm 2 phần bổ trợ nhau:
 
-- **Phần nói** — một *research proposal* (`PROPOSAL.md`) trình bày bạn hiểu vấn đề,
-  biết khoảng trống nghiên cứu, và có kế hoạch.
-- **Phần làm** — một *demo chạy được* (`fed_lora.py`) chứng minh bạn **đã bắt tay
-  code** đúng bài toán, không chỉ nói lý thuyết. Đây là thứ thuyết phục nhất với
-  một giáo sư đang tuyển RA: *"em không chỉ thấy hay, em đã tự dựng vòng lặp lõi
-  của bài toán rồi"*.
+- **Phần viết** — một bản trình bày vấn đề (`PROPOSAL.md`): bài toán là gì, khoảng
+  trống nghiên cứu ở đâu, và có thể đi tiếp theo hướng nào.
+- **Phần làm** — một *demo chạy được* (`fed_lora.py`) biến các ý tưởng trừu tượng
+  thành thứ *cụ thể, đo được*: tự dựng vòng lặp lõi của bài toán để hiểu nó từ bên
+  trong, chứ không dừng ở lý thuyết.
 
 **Đề tài TrustFed** xoay quanh 3 trụ cột (chính là 3 vế trong đề bài gốc):
 
@@ -52,8 +51,8 @@ Hồ sơ gồm 2 phần bổ trợ nhau:
 | **Học không giám sát hợp pháp** | Học từ dữ liệu **không nhãn** (self-supervised), theo cách tuân thủ quy định pháp lý về dữ liệu |
 | **Chuyển giao tri thức hiệu quả** | Truyền tri thức **hai chiều** giữa mô hình global lớn và các mô hình local nhỏ, dưới ngân sách truyền thông eo hẹp |
 
-Bạn đã chọn: bối cảnh **RA**, demo đinh là **Federated LoRA fine-tune một LM nhỏ**,
-và proposal **cân bằng cả 3 trụ cột**. Toàn bộ tài liệu được viết theo đúng lựa chọn đó.
+Trọng tâm dự án: demo chính là **Federated LoRA fine-tune một LM nhỏ**, và phần viết
+**cân bằng cả 3 trụ cột**. Toàn bộ tài liệu bám theo hướng đó.
 
 ---
 
@@ -92,10 +91,9 @@ khoảng trống đó.
 
 ```
 FL/
-├── PROPOSAL.md        # Research proposal 2 trang (gửi giáo sư) — ĐỌC TRƯỚC
-├── README.md          # Giới thiệu portfolio bằng tiếng Anh (cho giáo sư)
-├── HUONG_DAN.md       # ← File này: giải thích cặn kẽ bằng tiếng Việt (cho bạn)
-├── EMAIL_TO_PROF.md   # Mẫu email pitch ngắn để xin gặp/xin RA
+├── PROPOSAL.md        # Bản trình bày vấn đề, 2 trang — ĐỌC TRƯỚC
+├── README.md          # Giới thiệu ngắn gọn bằng tiếng Anh
+├── HUONG_DAN.md       # ← File này: giải thích cặn kẽ bằng tiếng Việt
 ├── RESULTS.md         # Bảng kết quả TỰ SINH mỗi lần chạy fed_lora.py
 │
 ├── fed_lora.py        # ★ DEMO ĐINH: Federated LoRA trên BERT-tiny pretrained
@@ -107,10 +105,10 @@ FL/
 └── results.png        # Biểu đồ (tự sinh nếu có matplotlib)
 ```
 
-**Mạch câu chuyện portfolio** đi từ đơn giản → chuyên sâu:
+**Mạch dự án** đi từ đơn giản → chuyên sâu:
 
-> Stage 0 (*"em hiểu FedAvg"*) → Stage 1 (*"em chạy được Federated LoRA trên một LLM
-> thật, chạm cả 3 trụ cột"*) → Proposal (*"và đây là kế hoạch nghiên cứu 12 tháng"*).
+> Stage 0 (*hiểu FedAvg*) → Stage 1 (*chạy Federated LoRA trên một LLM thật, chạm cả
+> 3 trụ cột*) → Proposal (*đặt vấn đề và các hướng đi tiếp*).
 
 ---
 
@@ -309,15 +307,14 @@ mất ~8.5 điểm và **vẫn hội tụ** (leo 0.56 → 0.64 qua các vòng). 
 vọng** và chính là "đánh đổi privacy–utility" mà đề tài muốn định lượng (RQ1): tăng
 `σ` thì riêng tư mạnh hơn nhưng mất nhiều độ chính xác hơn. Với ít client (chỉ 5), DP
 đặc biệt "đắt" vì nhiễu khó được san đều; thực tế các hệ thống dùng *hàng nghìn*
-client để pha loãng nhiễu — đây là điểm bạn nên nêu thẳng thắn và biến thành hướng
-nghiên cứu.
+client để pha loãng nhiễu — đây là một hướng thú vị để tìm hiểu tiếp.
 
 ---
 
 ## 8. Hai lỗi tinh vi đã sửa
 
-> Đây là phần **cực kỳ giá trị khi phỏng vấn**: nó cho thấy bạn không chỉ ghép API,
-> mà thật sự *hiểu* và *gỡ được* những cái bẫy mà người mới hay mắc.
+> Đây là phần **đáng giá nhất để hiểu sâu**: nó cho thấy khác biệt giữa "ghép API"
+> và thật sự *hiểu + gỡ được* những cái bẫy mà người mới hay mắc.
 
 ### Lỗi 1 — Adapter chỉ có nghĩa khi mọi client dùng CHUNG một backbone pretrained
 
@@ -385,7 +382,7 @@ python federated.py      # FedAvg
 
 ---
 
-## 10. Giáo sư có thể hỏi gì — và cách trả lời
+## 10. Câu hỏi thường gặp về dự án
 
 - **"Vì sao đóng băng backbone mà vẫn học được?"** → Vì BERT-tiny đã pretrain nên đặc
   trưng ngôn ngữ ở lớp ẩn đã hữu ích; LoRA + head chỉ cần *xoay* các đặc trưng đó cho
@@ -396,20 +393,20 @@ python federated.py      # FedAvg
   hơn local-only** trong khi **không lộ data**.
 - **"DP làm tụt chính xác nhiều thế?"** → Với chỉ 5 client, nhiễu khó pha loãng; hệ
   thống thật dùng hàng nghìn client. Định lượng *biên privacy–utility* theo số client,
-  rank, `C`, `σ` chính là RQ1 của em.
-- **"Đây mới là phân loại, chứ đâu phải LLM sinh văn bản?"** → Đúng, em chọn phân loại
-  để có thước đo sạch trên CPU. Phương pháp *độc lập với checkpoint*: đổi sang
+  rank, `C`, `σ` chính là nội dung của RQ1.
+- **"Đây mới là phân loại, chứ đâu phải LLM sinh văn bản?"** → Đúng, ở đây chọn phân
+  loại để có thước đo sạch trên CPU. Phương pháp *độc lập với checkpoint*: đổi sang
   DistilBERT/GPT-2 và mục tiêu sinh/MLM chỉ là thay vài dòng — đó là bước đầu của
   lộ trình.
-- **"Vì sao không dùng `peft`/Flower?"** → Em *cố ý* tự viết LoRA và vòng lặp FL để
+- **"Vì sao không dùng `peft`/Flower?"** → *Cố ý* tự viết LoRA và vòng lặp FL để
   (a) hiểu nội tại, (b) chủ động cài DP + tổng hợp adapter, (c) chạy ổn định trên
-  Windows. Stage 0 đã cho thấy em dùng được Flower.
+  Windows. Stage 0 cho thấy Flower cũng dùng được.
 
 ---
 
 ## 11. Hạn chế trung thực & hướng mở rộng
 
-**Hạn chế (nên chủ động nêu — sự trung thực tạo uy tín):**
+**Hạn chế (thành thật để hiểu đúng giới hạn):**
 - Backbone rất nhỏ (BERT-tiny) và bài toán là phân loại 4 lớp; chưa phải LLM sinh văn.
 - Chạy *mô phỏng* trên một máy, chưa phải hệ phân tán thật.
 - DP theo kiểu minh họa cơ chế; chưa kèm *kế toán (ε, δ)* chính thức.

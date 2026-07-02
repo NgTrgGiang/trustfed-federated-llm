@@ -2,18 +2,19 @@
 
 [🇬🇧 English](README.md) · **🇻🇳 Tiếng Việt**
 
-Một *portfolio + research proposal* để xin vị trí **Trợ lý Nghiên cứu (RA)** về đề
-tài **tinh chỉnh mô hình ngôn ngữ theo kiểu liên kết, bảo vệ quyền riêng tư**. Dự án
-được xây theo hai tầng, đi từ *"tôi hiểu học liên kết"* đến *"tôi đã chạy được một
-pipeline thích ứng LLM liên kết chạm tới cả ba trụ cột của đề tài"*.
+Một **dự án cá nhân để hiểu rõ** — bằng cách tự tay làm — điều gì khiến việc
+**tinh chỉnh mô hình ngôn ngữ theo kiểu liên kết, bảo vệ quyền riêng tư** trở nên
+đáng tin cậy. Dự án được xây theo hai tầng, đi từ *hiểu học liên kết cơ bản* đến
+*chạy được một pipeline thích ứng LLM liên kết*, để mỗi ý tưởng trong bài toán
+(riêng tư, học không nhãn, chuyển giao tri thức global↔local) trở nên cụ thể thay
+vì trừu tượng.
 
-- **Tầm nhìn nghiên cứu:** [`PROPOSAL.md`](PROPOSAL.md) — proposal 2 trang cho
-  *TrustFed*: các F-LLM riêng tư ngay từ thiết kế, học được từ dữ liệu không nhãn,
-  và chuyển giao tri thức hiệu quả giữa mô hình global lớn và mô hình local nhỏ.
-- **Lời chào hàng:** [`EMAIL_TO_PROF.md`](EMAIL_TO_PROF.md) — mẫu email ngắn xin gặp/xin RA.
-- **Bằng chứng:** hai tầng code bên dưới và [`RESULTS.md`](RESULTS.md).
+- **Trình bày vấn đề:** [`PROPOSAL.md`](PROPOSAL.md) — bản viết ngắn về *TrustFed*:
+  các F-LLM riêng tư ngay từ thiết kế, học được từ dữ liệu không nhãn, và chuyển
+  giao tri thức hiệu quả giữa mô hình global lớn và mô hình local nhỏ.
 - **Hiểu sâu (tiếng Việt):** [`HUONG_DAN.md`](HUONG_DAN.md) — giải thích cặn kẽ từng
   khái niệm và từng phần code.
+- **Thực nghiệm:** hai tầng code bên dưới và [`RESULTS.md`](RESULTS.md).
 
 ---
 
@@ -78,7 +79,6 @@ Script chạy bốn chế độ — **centralized** (trần), **local-only** (kh
 | [`fed_lora.py`](fed_lora.py) | **Demo đinh**: federated LoRA trên một LLM pretrain |
 | [`federated.py`](federated.py) / [`centralized.py`](centralized.py) | Tầng 0: FedAvg vs tập trung trên MNIST |
 | [`RESULTS.md`](RESULTS.md) | Kết quả tự sinh từ `fed_lora.py` |
-| [`EMAIL_TO_PROF.md`](EMAIL_TO_PROF.md) | Mẫu email xin làm RA |
 | [`requirements.txt`](requirements.txt) | Thư viện phụ thuộc (Tầng 0 + Tầng 1) |
 
 ## Lộ trình (theo proposal)

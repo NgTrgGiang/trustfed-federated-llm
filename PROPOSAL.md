@@ -1,8 +1,8 @@
 # TrustFed: Trustworthy Federated Large Language Models
 
-**A research proposal / statement of interest for a Research Assistant position**
+**A short research write-up — a personal project to understand the problem**
 
-*Prepared by: [Your Name], VinUniversity — [date]*
+*[Your Name], VinUniversity — [date]*
 
 **🇬🇧 English** · [🇻🇳 Tiếng Việt](PROPOSAL.vi.md)
 
@@ -142,7 +142,7 @@ the weakest clients, while raw data never moves. Adding user-level DP costs only
 ~8.5 points (0.721 → 0.636) at this noise level and still converges — a first,
 concrete point on the privacy–utility frontier that TrustFed proposes to map.
 
-## 6. Research plan (indicative, ~12 months as an RA)
+## 6. Directions to explore next (indicative)
 
 | Phase | Focus | Deliverable |
 |---|---|---|
@@ -162,17 +162,18 @@ concrete point on the privacy–utility frontier that TrustFed proposes to map.
 4. A **compliance-oriented training protocol** (provenance + consent ledger) that
    makes the "legally compliant unsupervised learning" claim concrete.
 
-## 8. Why me (fit as a Research Assistant)
+## 8. What building this taught me
 
-I do not just find this problem interesting — I have already implemented its core
-loop. Starting from a blank repository I built a correct FedAvg simulation, then a
+Building this end-to-end turned the abstract problem into concrete understanding.
+Starting from a blank repository I built a correct FedAvg simulation, then a
 federated LoRA fine-tuner of a real pre-trained transformer with from-scratch LoRA,
 non-IID partitioning, user-level DP, and communication accounting — and I debugged
 the subtle failure modes along the way (e.g., that averaging adapters only makes
-sense on a *shared, pre-trained* backbone). I am comfortable in PyTorch and the
-HuggingFace stack, I write code others can read and run, and I am motivated by the
-regulated, real-world settings where F-LLMs actually matter. I would be glad to
-start by reproducing a result of your choosing from the group's recent work.
+sense on a *shared, pre-trained* backbone; that DP noise must be scaled by the
+number of clients). The biggest lesson: each pillar (privacy, label-free learning,
+global↔local transfer) is easy to state but full of hidden trade-offs once you
+actually implement and *measure* it — which is why building it, rather than only
+reading about it, was worth doing.
 
 ## References
 

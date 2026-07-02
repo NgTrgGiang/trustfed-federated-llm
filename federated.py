@@ -3,8 +3,8 @@ Federated version: the SAME model and data, but split across several virtual
 clients that train locally and are aggregated with FedAvg by a central server.
 Uses Flower's simulation engine, so everything runs in one process on your machine.
 
-This is the core artifact to show Prof. Wong: it demonstrates you actually ran
-FedAvg and understand the client/server split.
+This Stage 0 demo exists to make the client/server split concrete: run FedAvg
+yourself and watch the server aggregate local updates into a global model.
 """
 import torch
 from collections import OrderedDict
